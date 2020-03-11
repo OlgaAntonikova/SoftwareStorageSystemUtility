@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="SoftwareStorageSystemUtility.Views.Dialogs.EditAuditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mvvm="http://prismlibrary.com/"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SoftwareStorageSystemUtility.Views.Dialogs"
+             mc:Ignorable="d" 
+             mvvm:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="300" d:DesignWidth="350">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="120"/>
+      <ColumnDefinition Width="250"/>
+      <ColumnDefinition Width="120"/>
+      <ColumnDefinition Width="200*"/>
+
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+
+    <Label Foreground="#595959" Content="Ид." Margin="10" Height="35"  VerticalContentAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Row="0" Grid.Column="2"/>
+
+    <TextBox Grid.Column="3"  Grid.Row="0"  
+                  Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                  Margin="10" Foreground="#595959"  IsEnabled="False"                 
+                  Text="{Binding IdAudit}" />
+
+    <Label Foreground="#595959" Content="Плата" Margin="10" Height="35"  VerticalContentAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Row="2" Grid.Column="0"/>
+    <TextBox Grid.Row="2" Grid.Column="1" Margin="10" Height="35"
+                 Text="{Binding Plata, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+    <Label Foreground="#595959" Content="Ревизия" Margin="10" Height="35"  VerticalContentAlignment="Center"
+               HorizontalAlignment="Center"
+               Grid.Row="0" Grid.Column="0"/>
+
+    <TextBox Grid.Row="0" Grid.Column="1" Margin="10" Height="35" IsEnabled="False"
+                 Text="{Binding Audit, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+    <Label  Content="Версия" Margin="10" Height="35"  
+                VerticalContentAlignment="Center"
+                HorizontalAlignment="Center" Foreground="#595959"
+                Grid.Row="1" Grid.Column="0"/>
+
+    <TextBox Grid.Row="1" Grid.Column="1" Margin="10" Height="35"
+                 Text="{Binding Version}"
+                 HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+    <Label  Content="Заказчик" Margin="10" Height="35"  
+                VerticalContentAlignment="Center"
+                HorizontalAlignment="Center" Foreground="#595959"
+                Grid.Row="1" Grid.Column="2"/>
+
+    <TextBox Grid.Row="1" Grid.Column="3" Margin="10" Height="35"
+                 Text="{Binding Customer}"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+    <Label  Content="Исполнитель" Margin="10" Height="35"  
+                VerticalContentAlignment="Center"
+                HorizontalAlignment="Center" Foreground="#595959"
+                Grid.Row="2" Grid.Column="2"/>
+
+    <TextBox Grid.Row="2" Grid.Column="3" Margin="10" Height="35"
+                 Text="{Binding Player}"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+    <Label Grid.Column="2" Content="Комментарий" Grid.Row="3"
+               Margin="10" Height="35"  
+               VerticalContentAlignment="Center"
+               HorizontalAlignment="Center" Foreground="#595959"/>
+    <TextBox Grid.Column="3" Grid.Row="3" Text="{Binding Comment}"
+                 Margin="10" Height="35"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+    <Label Grid.Column="0" Content="Заказ" Grid.Row="3"
+               Margin="10" Height="35"  
+               VerticalContentAlignment="Center"
+               HorizontalAlignment="Center" Foreground="#595959"/>
+    <TextBox Grid.Column="1" Grid.Row="3" Text="{Binding Order}"
+                 Margin="10" Height="35"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+
+    <Button Content="Сохранить" Grid.Column="0" Grid.Row="4" 
+                Command="{Binding SaveCommand}" Margin="5"
+                  FontSize="14" Foreground="DimGray" Background="LightSkyBlue"
+                  IsEnabled="True"/>
+    <Button Content="Отмена" Grid.Column="1" Grid.Row="4" 
+                Command="{Binding CancelCommand}" Margin="5" Width="110" HorizontalAlignment="Left"
+                  FontSize="14" Foreground="DimGray" Background="LightSkyBlue"
+                  IsEnabled="True"/>
+  </Grid>
+</UserControl>
